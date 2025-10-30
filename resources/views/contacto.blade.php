@@ -29,7 +29,7 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Dirección</h3>
-                            <p class="text-gray-600">Calle Principal, 123<br>Ciudad, Provincia, 12345</p>
+                            <p class="text-gray-800">Calle Principal, 123<br>Ciudad, Provincia, 12345</p>
                         </div>
                     </div>
                     
@@ -41,8 +41,8 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Teléfono</h3>
-                            <p class="text-gray-600">+34 123 456 789</p>
-                            <p class="text-gray-600 text-sm mt-1">Lun - Dom: 8:00 - 23:00</p>
+                            <p class="text-gray-800">+34 123 456 789</p>
+                            <p class="text-gray-800 text-sm mt-1">Lun - Dom: 8:00 - 23:00</p>
                         </div>
                     </div>
                     
@@ -54,8 +54,8 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                            <p class="text-gray-600">info@x3padel.com</p>
-                            <p class="text-gray-600">reservas@x3padel.com</p>
+                            <p class="text-gray-800">info@x3padel.com</p>
+                            <p class="text-gray-800">reservas@x3padel.com</p>
                         </div>
                     </div>
                     
@@ -67,8 +67,8 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Horario</h3>
-                            <p class="text-gray-600">Lunes a Domingo</p>
-                            <p class="text-gray-600">8:00 - 23:00</p>
+                            <p class="text-gray-800">Lunes a Domingo</p>
+                            <p class="text-gray-800">8:00 - 23:00</p>
                         </div>
                     </div>
                 </div>
@@ -159,11 +159,11 @@
         <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Cómo Llegar</h2>
         <div class="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
             <div class="text-center">
-                <svg class="w-24 h-24 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-24 h-24 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
-                <p class="text-gray-600 text-lg">Mapa de ubicación (Google Maps se integrará aquí)</p>
+                <p class="text-gray-800 text-lg">Mapa de ubicación (Google Maps se integrará aquí)</p>
             </div>
         </div>
     </div>

@@ -1,15 +1,5 @@
 <section>
-    <header>
-        <h2 class="text-2xl font-bold text-gray-900">
-            Cambiar Contraseña
-        </h2>
-
-        <p class="mt-2 text-gray-600">
-            Asegúrate de usar una contraseña larga y segura para mantener tu cuenta protegida.
-        </p>
-    </header>
-
-    <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('password.update') }}" class="space-y-6">
         @csrf
         @method('put')
 

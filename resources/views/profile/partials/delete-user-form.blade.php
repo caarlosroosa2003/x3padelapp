@@ -1,13 +1,7 @@
 <section class="space-y-6">
-    <header>
-        <h2 class="text-2xl font-bold text-red-600">
-            Eliminar Cuenta
-        </h2>
-
-        <p class="mt-2 text-gray-600">
-            Una vez que tu cuenta sea eliminada, todos sus recursos y datos serán permanentemente borrados. Antes de eliminar tu cuenta, por favor descarga cualquier dato o información que desees conservar.
-        </p>
-    </header>
+    <p class="text-gray-800">
+        Una vez que tu cuenta sea eliminada, todos sus recursos y datos serán permanentemente borrados. Antes de eliminar tu cuenta, por favor descarga cualquier dato o información que desees conservar.
+    </p>
 
     <x-danger-button
         x-data=""
@@ -23,7 +17,7 @@
                 ¿Estás seguro de que quieres eliminar tu cuenta?
             </h2>
 
-            <p class="mt-1 text-sm text-gray-600">
+            <p class="mt-1 text-sm text-gray-800">
                 Una vez que tu cuenta sea eliminada, todos sus recursos y datos serán permanentemente borrados. Por favor ingresa tu contraseña para confirmar que deseas eliminar tu cuenta de forma permanente.
             </p>
 

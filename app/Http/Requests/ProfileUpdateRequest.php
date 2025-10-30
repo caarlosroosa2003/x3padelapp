@@ -17,15 +17,18 @@ class ProfileUpdateRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => [
-                'required',
-                'string',
-                'lowercase',
-                'email',
-                'max:255',
-                Rule::unique(User::class)->ignore($this->user()->id),
-            ],
+            // Email no es editable, se elimina de las reglas de validación
             'telefono' => ['nullable', 'string', 'max:20'],
         ];
+    }
+    
+    /**
+     * Preparar los datos para validación.
+     * Elimina el email si se intenta enviar.
+     */
+    protected function prepareForValidation(): void
+    {
+        // Eliminar el email de la solicitud para asegurar que no se actualice
+        $this->request->remove('email');
     }
 }

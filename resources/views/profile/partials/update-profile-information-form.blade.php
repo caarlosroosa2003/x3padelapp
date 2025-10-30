@@ -1,19 +1,9 @@
 <section>
-    <header>
-        <h2 class="text-2xl font-bold text-gray-900">
-            Información del Perfil
-        </h2>
-
-        <p class="mt-2 text-gray-600">
-            Actualiza la información de tu cuenta y dirección de email.
-        </p>
-    </header>
-
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="space-y-6">
         @csrf
         @method('patch')
 
@@ -24,14 +14,26 @@
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
-        <!-- Email -->
+        <!-- Email (Solo lectura) -->
         <div>
-            <x-input-label for="email" value="Email" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
+            <x-input-label for="email" value="Email (no editable)" />
+            <div class="mt-1 block w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-lg text-gray-700 cursor-not-allowed">
+                <div class="flex items-center justify-between">
+                    <span class="font-medium">{{ $user->email }}</span>
+                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                </div>
+            </div>
+            <p class="mt-2 text-sm text-gray-700">
+                <svg class="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                </svg>
+                El correo electrónico no se puede modificar por razones de seguridad.
+            </p>
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
-                <div class="mt-3 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <div class="mt-3 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
                     <p class="text-sm text-yellow-800">
                         Tu dirección de email no está verificada.
 
@@ -62,11 +64,11 @@
             <div class="grid grid-cols-2 gap-4">
                 <div class="text-center">
                     <div class="text-3xl font-bold text-[#C3E617]">{{ $user->reservas_count }}</div>
-                    <div class="text-sm text-gray-600">Reservas Realizadas</div>
+                    <div class="text-sm text-gray-800">Reservas Realizadas</div>
                 </div>
                 <div class="text-center">
                     <div class="text-3xl font-bold text-black">{{ $user->reservas_gratis_disponibles }}</div>
-                    <div class="text-sm text-gray-600">Reservas Gratis</div>
+                    <div class="text-sm text-gray-800">Reservas Gratis</div>
                 </div>
             </div>
             @if($user->is_admin)

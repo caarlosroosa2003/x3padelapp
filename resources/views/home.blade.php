@@ -47,7 +47,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">¿Por qué elegir X3 Pádel?</h2>
-            <p class="text-xl text-gray-600">Ofrecemos las mejores instalaciones y servicios para tu experiencia deportiva</p>
+            <p class="text-xl text-gray-800">Ofrecemos las mejores instalaciones y servicios para tu experiencia deportiva</p>
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -59,7 +59,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Reserva Online 24/7</h3>
-                <p class="text-gray-600 text-center">Reserva tu pista en cualquier momento desde nuestra plataforma web</p>
+                <p class="text-gray-800 text-center">Reserva tu pista en cualquier momento desde nuestra plataforma web</p>
             </div>
             
             <!-- Característica 2 -->
@@ -70,7 +70,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">4 Pistas Profesionales</h3>
-                <p class="text-gray-600 text-center">Instalaciones de primera calidad con mantenimiento diario</p>
+                <p class="text-gray-800 text-center">Instalaciones de primera calidad con mantenimiento diario</p>
             </div>
             
             <!-- Característica 3 -->
@@ -81,7 +81,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Programa de Recompensas</h3>
-                <p class="text-gray-600 text-center">Cada 5 reservas, ¡tu siguiente reserva es gratis!</p>
+                <p class="text-gray-800 text-center">Cada 5 reservas, ¡tu siguiente reserva es gratis!</p>
             </div>
             
             <!-- Característica 4 -->
@@ -92,7 +92,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Tienda Especializada</h3>
-                <p class="text-gray-600 text-center">Catálogo completo de productos y accesorios de pádel</p>
+                <p class="text-gray-800 text-center">Catálogo completo de productos y accesorios de pádel</p>
             </div>
         </div>
     </div>
@@ -103,7 +103,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">Nuestras Pistas</h2>
-            <p class="text-xl text-gray-600">Disponemos de 4 pistas profesionales listas para ti</p>
+            <p class="text-xl text-gray-800">Disponemos de 4 pistas profesionales listas para ti</p>
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -113,7 +113,7 @@
                     <h3 class="text-2xl font-bold text-gray-900">Pista {{ $i }}</h3>
                     <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Disponible</span>
                 </div>
-                <ul class="space-y-2 text-gray-600 mb-6">
+                <ul class="space-y-2 text-gray-800 mb-6">
                     <li class="flex items-center">
                         <svg class="w-5 h-5 text-[#C3E617] mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
@@ -173,7 +173,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">Lo que dicen nuestros clientes</h2>
-            <p class="text-xl text-gray-600">Experiencias reales de nuestra comunidad</p>
+            <p class="text-xl text-gray-800">Experiencias reales de nuestra comunidad</p>
         </div>
         
         <div class="grid md:grid-cols-3 gap-8">
@@ -188,14 +188,14 @@
                         @endfor
                     </div>
                 </div>
-                <p class="text-gray-600 mb-4">"Excelentes instalaciones y el sistema de reservas online es muy cómodo. ¡Las pistas están siempre en perfectas condiciones!"</p>
+                <p class="text-gray-800 mb-4">"Excelentes instalaciones y el sistema de reservas online es muy cómodo. ¡Las pistas están siempre en perfectas condiciones!"</p>
                 <div class="flex items-center">
                     <div class="w-12 h-12 bg-[#C3E617] rounded-full flex items-center justify-center text-black font-bold text-xl mr-3">
                         M
                     </div>
                     <div>
                         <p class="font-semibold text-gray-900">María García</p>
-                        <p class="text-sm text-gray-500">Socia desde 2023</p>
+                        <p class="text-sm text-gray-700">Socia desde 2023</p>
                     </div>
                 </div>
             </div>
@@ -211,14 +211,14 @@
                         @endfor
                     </div>
                 </div>
-                <p class="text-gray-600 mb-4">"El programa de recompensas es genial. Ya he conseguido varias reservas gratis. ¡Muy recomendable!"</p>
+                <p class="text-gray-800 mb-4">"El programa de recompensas es genial. Ya he conseguido varias reservas gratis. ¡Muy recomendable!"</p>
                 <div class="flex items-center">
                     <div class="w-12 h-12 bg-[#C3E617] rounded-full flex items-center justify-center text-black font-bold text-xl mr-3">
                         C
                     </div>
                     <div>
                         <p class="font-semibold text-gray-900">Carlos Ruiz</p>
-                        <p class="text-sm text-gray-500">Socio desde 2022</p>
+                        <p class="text-sm text-gray-700">Socio desde 2022</p>
                     </div>
                 </div>
             </div>
@@ -234,14 +234,14 @@
                         @endfor
                     </div>
                 </div>
-                <p class="text-gray-600 mb-4">"Ambiente familiar y profesional. La tienda tiene todo lo que necesitas. ¡El mejor centro de pádel de la zona!"</p>
+                <p class="text-gray-800 mb-4">"Ambiente familiar y profesional. La tienda tiene todo lo que necesitas. ¡El mejor centro de pádel de la zona!"</p>
                 <div class="flex items-center">
                     <div class="w-12 h-12 bg-[#C3E617] rounded-full flex items-center justify-center text-black font-bold text-xl mr-3">
                         A
                     </div>
                     <div>
                         <p class="font-semibold text-gray-900">Ana Martínez</p>
-                        <p class="text-sm text-gray-500">Socia desde 2024</p>
+                        <p class="text-sm text-gray-700">Socia desde 2024</p>
                     </div>
                 </div>
             </div>

@@ -33,7 +33,7 @@
             </div>
             
             <div class="mt-6 text-center">
-                <a href="{{ url('/') }}" class="text-gray-600 hover:text-[#C3E617] font-medium transition duration-300">
+                <a href="{{ url('/') }}" class="text-gray-800 hover:text-[#C3E617] font-medium transition duration-300">
                     ← Volver al inicio
                 </a>
             </div>
