@@ -13,12 +13,12 @@
             </div>
             <div class="flex gap-4">
                 <div class="bg-[#C3E617] bg-opacity-20 rounded-xl p-4 text-center">
-                    <div class="text-[#C3E617] text-3xl font-bold">{{ $user->reservas_count }}</div>
-                    <div class="text-gray-300 text-sm">Total Reservas</div>
+                    <div class="text-[#050000] text-3xl font-bold">{{ $user->reservas_count }}</div>
+                    <div class="text-[#424242] text-sm">Total Reservas</div>
                 </div>
                 <div class="bg-green-500 bg-opacity-20 rounded-xl p-4 text-center">
                     <div class="text-green-400 text-3xl font-bold">{{ $user->reservas_gratis_disponibles }}</div>
-                    <div class="text-gray-300 text-sm">Gratis Disponibles</div>
+                    <div class="text-[#424242] text-sm">Gratis Disponibles</div>
                 </div>
             </div>
         </div>

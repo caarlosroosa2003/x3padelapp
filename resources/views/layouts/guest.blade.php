@@ -8,7 +8,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Favicon -->
-        <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo.svg') }}">
+        <link rel="icon" type="image/jpeg" href="{{ asset('images/logox3.jpg') }}">
         
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -21,7 +21,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-50">
             <div class="text-center mb-6">
                 <a href="/">
-                    <img src="{{ asset('images/logo.svg') }}" alt="X3 Pádel" class="w-24 h-24 mx-auto mb-4">
+                    <img src="{{ asset('images/logox3.jpg') }}" alt="X3 Pádel" class="w-24 h-24 mx-auto mb-4 rounded-lg">
                     <h1 class="text-3xl font-bold text-gray-900">
                         <span class="text-[#C3E617]">X3</span> Pádel
                     </h1>

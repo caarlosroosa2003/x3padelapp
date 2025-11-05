@@ -405,3 +405,6 @@ PAGINATE 10
 **✅ Sin errores de disponibilidad**
 **📊 Con historial completo**
 
+
+
+

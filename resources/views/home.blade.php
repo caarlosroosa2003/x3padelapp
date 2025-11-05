@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="hidden md:block">
-                <img src="{{ asset('images/logo.svg') }}" alt="X3 Pádel" class="w-full max-w-md mx-auto animate-pulse">
+                <img src="{{ asset('images/logox3.jpg') }}" alt="X3 Pádel" class="w-full max-w-md mx-auto animate-pulse rounded-lg">
             </div>
         </div>
     </div>

@@ -219,3 +219,6 @@ Si en el futuro necesitas agregar texto:
 **✅ Todos los textos ahora son legibles y cumplen estándares de accesibilidad**
 **🎾 X3 Pádel - Accesible para todos**
 
+
+
+

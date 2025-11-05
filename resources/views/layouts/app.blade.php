@@ -8,7 +8,7 @@
     <title>@yield('title', 'X3 Pádel - Tu Centro Deportivo')</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo.svg') }}">
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/logox3.jpg') }}">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -33,7 +33,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="{{ url('/') }}" class="flex items-center">
-                        <img src="{{ asset('images/logo.svg') }}" alt="X3 Pádel Logo" class="h-16 w-16">
+                        <img src="{{ asset('images/logox3.jpg') }}" alt="X3 Pádel Logo" class="h-16 w-16 rounded-lg">
                         <span class="ml-3 text-2xl font-bold text-[#C3E617]">X3 Pádel</span>
                     </a>
                 </div>
@@ -132,7 +132,7 @@
                 <!-- Logo y descripción -->
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center mb-4">
-                        <img src="{{ asset('images/logo.svg') }}" alt="X3 Pádel Logo" class="h-12 w-12">
+                        <img src="{{ asset('images/logox3.jpg') }}" alt="X3 Pádel Logo" class="h-12 w-12 rounded-lg">
                         <span class="ml-3 text-xl font-bold text-[#C3E617]">X3 Pádel</span>
                     </div>
                     <p class="text-gray-600 mb-4">

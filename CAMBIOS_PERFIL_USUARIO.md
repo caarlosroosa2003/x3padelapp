@@ -295,3 +295,6 @@ Si necesitas cambiar el email de un usuario:
 **✅ Perfil de Usuario Completado y Asegurado**
 **🎾 X3 Pádel - Sistema Seguro**
 
+
+
+

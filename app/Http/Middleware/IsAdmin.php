@@ -15,14 +15,10 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!auth()->check()) {
-            return redirect()->route('login')->with('error', 'Debes iniciar sesión para acceder a esta página.');
+        $user = $request->user();
+        if (!$user || !$user->is_admin) {
+            abort(403, 'Acceso no autorizado');
         }
-
-        if (!auth()->user()->is_admin) {
-            abort(403, 'No tienes permisos para acceder a esta página.');
-        }
-
         return $next($request);
     }
 }

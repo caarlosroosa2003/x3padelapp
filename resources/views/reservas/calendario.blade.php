@@ -15,8 +15,8 @@
                 <p class="text-gray-300 mt-2">{{ $pista->descripcion ?? 'Selecciona fecha y horario para tu reserva' }}</p>
             </div>
             <div class="bg-[#C3E617] bg-opacity-20 rounded-xl p-4">
-                <div class="text-[#C3E617] text-3xl font-bold">30€</div>
-                <div class="text-gray-300 text-sm">por sesión (1h 30min)</div>
+                <div class="text-white text-3xl font-bold">30€</div>
+                <div class="text-white text-sm ">por sesión (1h 30min)</div>
             </div>
         </div>
     </div>

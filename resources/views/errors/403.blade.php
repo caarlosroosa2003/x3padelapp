@@ -65,7 +65,7 @@
 
         <!-- Logo -->
         <div class="mt-12">
-            <img src="{{ asset('images/logo.svg') }}" alt="X3 Pádel" class="h-16 w-16 mx-auto opacity-50">
+            <img src="{{ asset('images/logox3.jpg') }}" alt="X3 Pádel" class="h-16 w-16 mx-auto opacity-50 rounded-lg">
         </div>
     </div>
 </div>
