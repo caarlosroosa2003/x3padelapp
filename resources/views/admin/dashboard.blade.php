@@ -10,7 +10,10 @@
                 <h1 class="text-4xl font-bold mb-2">Panel de Administración</h1>
                 <p class="text-gray-300">Bienvenido, {{ Auth::user()->name }}</p>
             </div>
-            <a href="{{ route('admin.products.index') }}" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Gestionar Productos</a>
+            <div class="flex gap-3">
+                <a href="{{ route('admin.products.index') }}" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Gestionar Productos</a>
+                <a href="{{ route('admin.reservas.index') }}" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Ver Reservas</a>
+            </div>
         </div>
     </div>
 </div>
@@ -33,7 +36,7 @@
             <p class="font-medium mb-3">Accesos Rápidos</p>
             <a href="{{ route('admin.users') }}" class="block text-sm hover:underline mb-1">→ Gestionar Usuarios</a>
             <a href="{{ route('admin.products.index') }}" class="block text-sm hover:underline mb-1">→ Gestionar Productos</a>
-            <a href="{{ url('/reservas') }}" class="block text-sm hover:underline">→ Ver Reservas</a>
+            <a href="{{ route('admin.reservas.index') }}" class="block text-sm hover:underline">→ Ver Reservas</a>
         </div>
     </div>
 

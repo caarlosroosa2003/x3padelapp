@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Reserva;
 
 class AdminController extends Controller
 {
@@ -103,5 +104,39 @@ class AdminController extends Controller
             ->paginate(15);
 
         return view('admin.users', compact('users', 'query'));
+    }
+
+    /**
+     * Listado de reservas (panel admin)
+     */
+    public function reservations()
+    {
+        $perPage = (int) request('per_page', 20);
+        if ($perPage < 10) { $perPage = 10; }
+        if ($perPage > 100) { $perPage = 100; }
+
+        $reservas = Reserva::with(['user:id,name,email', 'pista:id,nombre'])
+            ->latest('fecha')
+            ->latest('hora_inicio')
+            ->paginate($perPage)
+            ->withQueryString();
+
+        // Estadísticas rápidas
+        $hoy = now()->toDateString();
+        $stats = [
+            'total' => Reserva::count(),
+            'confirmadas' => Reserva::where('estado', 'confirmada')->count(),
+            'pendientes' => Reserva::where('estado', 'pendiente')->count(),
+            'canceladas' => Reserva::where('estado', 'cancelada')->count(),
+            'hoy' => Reserva::where('fecha', $hoy)->count(),
+            'futuras' => Reserva::where('fecha', '>=', $hoy)->count(),
+            'ingresos_mes' => (float) Reserva::where('estado', 'confirmada')
+                ->whereMonth('fecha', now()->month)
+                ->sum('precio'),
+            'ingresos_total' => (float) Reserva::where('estado', 'confirmada')->sum('precio'),
+            'gratis_mes' => Reserva::where('es_gratis', true)->whereMonth('fecha', now()->month)->count(),
+        ];
+
+        return view('admin.reservas.index', compact('reservas', 'stats'));
     }
 }

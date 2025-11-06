@@ -29,7 +29,7 @@
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
                 <div class="h-64 flex items-center justify-center overflow-hidden cursor-zoom-in" onclick="openImageModal('{{ $producto->imagen ? e(Storage::url($producto->imagen)) : '' }}')">
                     @if($producto->imagen)
-                    <img src="{{ Storage::url($producto->imagen) }}" alt="{{ $producto->nombre }}" class="w-full h-full object-cover">
+                    <img src="{{ Storage::url($producto->imagen) }}" alt="{{ $producto->nombre }}" class="w-full h-full object-cover" loading="lazy" decoding="async">
                     @else
                     <div class="bg-gradient-to-br from-gray-100 to-gray-200 w-full h-full flex items-center justify-center">
                         <svg class="w-32 h-32 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

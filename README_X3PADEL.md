@@ -95,6 +95,14 @@ php artisan serve
 
 La aplicación estará disponible en: `http://localhost:8000`
 
+### Optimización y cachés (producción)
+
+- Compilar assets: `npm run build`
+- Cachear configuración: `php artisan config:cache`
+- Cachear rutas: `php artisan route:cache`
+- Cachear vistas: `php artisan view:cache`
+- Limpiar cachés si cambias algo: `php artisan config:clear && php artisan route:clear && php artisan view:clear`
+
 ## Estructura del Proyecto
 
 ```

@@ -21,7 +21,7 @@
             @if($product->imagen)
             <div class="mb-6">
                 <x-input-label :value="__('Imagen actual')" />
-                <img src="{{ Storage::url($product->imagen) }}" class="mt-2 h-28 w-28 rounded-lg object-cover border" alt="{{ $product->nombre }}">
+                <img src="{{ Storage::url($product->imagen) }}" class="mt-2 h-28 w-28 rounded-lg object-cover border" alt="{{ $product->nombre }}" loading="lazy" decoding="async">
             </div>
             @endif
 

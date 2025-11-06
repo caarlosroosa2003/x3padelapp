@@ -17,7 +17,7 @@ Route::get('/reservas/pista/{pista}/horarios', [ReservaController::class, 'obten
 // Catálogo
 Route::get('/catalogo', function () {
     $categoriaSeleccionada = request('categoria', 'Todas');
-    $productos = \App\Models\Product::activos();
+    $productos = \App\Models\Product::activos()->select(['id','nombre','precio','categoria','imagen','stock','descripcion','created_at']);
 
     if ($categoriaSeleccionada && $categoriaSeleccionada !== 'Todas') {
         $productos = $productos->porCategoria($categoriaSeleccionada);
@@ -66,6 +66,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // CRUD de productos
     Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
+
+    // Reservas (panel admin)
+    Route::get('/reservas', [App\Http\Controllers\AdminController::class, 'reservations'])->name('reservas.index');
 });
 
 require __DIR__.'/auth.php';

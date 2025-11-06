@@ -45,7 +45,7 @@
                         <td class="px-6 py-4">
                             <div class="flex items-center">
                                 @if($product->imagen)
-                                <img src="{{ Storage::url($product->imagen) }}" class="h-14 w-14 rounded-lg object-cover" alt="{{ $product->nombre }}">
+                                <img src="{{ Storage::url($product->imagen) }}" class="h-14 w-14 rounded-lg object-cover" alt="{{ $product->nombre }}" loading="lazy" decoding="async">
                                 @else
                                 <div class="h-14 w-14 rounded-lg bg-gray-200"></div>
                                 @endif
