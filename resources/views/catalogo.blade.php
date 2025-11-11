@@ -14,14 +14,88 @@
 <!-- Categorías y productos desde BD -->
 <section class="py-12 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        @php
+            $busquedaActual = $terminoBusqueda ?? '';
+            $ordenActual = $ordenSeleccionado ?? 'recientes';
+        @endphp
+
+        <form method="GET" action="{{ route('catalogo') }}" class="bg-white shadow-lg rounded-2xl p-6 mb-10 space-y-4 lg:space-y-0 lg:flex lg:items-end lg:gap-6">
+            @if($categoriaSeleccionada !== 'Todas')
+                <input type="hidden" name="categoria" value="{{ $categoriaSeleccionada }}">
+            @endif
+
+            <div class="flex-1">
+                <label for="busqueda" class="block text-sm font-semibold text-gray-700 mb-2">Buscar productos</label>
+                <div class="flex items-stretch rounded-xl border-2 border-gray-200 bg-gray-50 focus-within:border-[#C3E617] focus-within:ring-2 focus-within:ring-[#C3E617]/40 transition">
+                    <input
+                        type="text"
+                        id="busqueda"
+                        name="q"
+                        value="{{ $busquedaActual }}"
+                        placeholder="Nombre, descripción, categoría..."
+                        class="flex-1 bg-transparent py-3 px-4 text-gray-800 focus:outline-none"
+                    >
+                    <button type="submit" class="px-5 text-sm font-semibold bg-[#C3E617] text-black hover:bg-[#d4f73a] transition rounded-r-xl">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-64">
+                <label for="orden" class="block text-sm font-semibold text-gray-700 mb-2">Ordenar por</label>
+                <select
+                    id="orden"
+                    name="orden"
+                    class="w-full rounded-xl border-2 border-gray-200 bg-gray-50 py-3 px-4 text-gray-800 focus:border-[#C3E617] focus:outline-none focus:ring-2 focus:ring-[#C3E617]/40 transition"
+                    onchange="this.form.submit()"
+                >
+                    <option value="recientes" {{ $ordenActual === 'recientes' ? 'selected' : '' }}>Más recientes</option>
+                    <option value="precio_menor" {{ $ordenActual === 'precio_menor' ? 'selected' : '' }}>Precio: menor a mayor</option>
+                    <option value="precio_mayor" {{ $ordenActual === 'precio_mayor' ? 'selected' : '' }}>Precio: mayor a menor</option>
+                    <option value="nombre_asc" {{ $ordenActual === 'nombre_asc' ? 'selected' : '' }}>Nombre A-Z</option>
+                    <option value="nombre_desc" {{ $ordenActual === 'nombre_desc' ? 'selected' : '' }}>Nombre Z-A</option>
+                </select>
+            </div>
+
+            @if($busquedaActual !== '' || $ordenActual !== 'recientes' || $categoriaSeleccionada !== 'Todas')
+            <div class="lg:w-auto">
+                <a href="{{ route('catalogo') }}" class="inline-flex items-center justify-center rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-semibold text-gray-600 hover:border-gray-300 hover:text-gray-800 transition">
+                    Limpiar filtros
+                </a>
+            </div>
+            @endif
+        </form>
+
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
             @foreach($categorias as $categoria)
-            <a href="{{ $categoria === 'Todas' ? route('catalogo') : route('catalogo', ['categoria' => $categoria]) }}"
+            @php
+                $params = [];
+                if ($categoria !== 'Todas') {
+                    $params['categoria'] = $categoria;
+                }
+                if ($busquedaActual !== '') {
+                    $params['q'] = $busquedaActual;
+                }
+                if ($ordenActual !== 'recientes') {
+                    $params['orden'] = $ordenActual;
+                }
+                $urlCategoria = route('catalogo', $params);
+            @endphp
+            <a href="{{ $urlCategoria }}"
                class="{{ ($categoriaSeleccionada ?? 'Todas') === $categoria ? 'bg-[#C3E617] text-black' : 'bg-white text-gray-900 border-2 border-gray-200' }} py-4 px-6 rounded-lg font-semibold hover:bg-[#d4f73a] transition duration-300 text-center">
                 {{ $categoria }}
             </a>
             @endforeach
         </div>
+
+        @if($busquedaActual !== '')
+        <p class="mb-8 text-gray-600 text-sm">
+            Resultados para <span class="font-semibold text-gray-900">"{{ $busquedaActual }}"</span>
+            @if($categoriaSeleccionada !== 'Todas')
+                en la categoría <span class="font-semibold text-gray-900">{{ $categoriaSeleccionada }}</span>
+            @endif
+        </p>
+        @endif
 
         @if($productos->count() > 0)
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

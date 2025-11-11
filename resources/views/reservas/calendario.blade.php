@@ -144,8 +144,8 @@
 </section>
 
 <!-- Modal de Confirmación -->
-<div id="modal-confirmar" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8">
+<div id="modal-confirmar" class="hidden fixed inset-0 bg-black/10 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white backdrop-blur-md border border-white/50 rounded-2xl shadow-2xl max-w-md w-full p-8 transition duration-200">
         <div class="text-center">
             <div class="bg-[#C3E617] bg-opacity-20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <svg class="w-8 h-8 text-[#C3E617]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

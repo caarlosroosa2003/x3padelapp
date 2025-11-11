@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservaController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // Página de inicio
@@ -15,18 +16,61 @@ Route::get('/reservas/pista/{pista}', [ReservaController::class, 'mostrarPista']
 Route::get('/reservas/pista/{pista}/horarios', [ReservaController::class, 'obtenerHorarios'])->name('reservas.horarios');
 
 // Catálogo
-Route::get('/catalogo', function () {
-    $categoriaSeleccionada = request('categoria', 'Todas');
-    $productos = \App\Models\Product::activos()->select(['id','nombre','precio','categoria','imagen','stock','descripcion','created_at']);
+Route::get('/catalogo', function (Request $request) {
+    $categoriaSeleccionada = $request->input('categoria', 'Todas');
+    $terminoBusqueda = trim((string) $request->input('q', ''));
+    $ordenSeleccionado = $request->input('orden', 'recientes');
+
+    $productosQuery = \App\Models\Product::activos()->select([
+        'id',
+        'nombre',
+        'precio',
+        'categoria',
+        'imagen',
+        'stock',
+        'descripcion',
+        'created_at',
+    ]);
 
     if ($categoriaSeleccionada && $categoriaSeleccionada !== 'Todas') {
-        $productos = $productos->porCategoria($categoriaSeleccionada);
+        $productosQuery->porCategoria($categoriaSeleccionada);
     }
 
-    $productos = $productos->latest()->get();
+    if ($terminoBusqueda !== '') {
+        $productosQuery->where(function ($query) use ($terminoBusqueda) {
+            $query->where('nombre', 'like', '%' . $terminoBusqueda . '%')
+                ->orWhere('descripcion', 'like', '%' . $terminoBusqueda . '%');
+        });
+    }
+
+    switch ($ordenSeleccionado) {
+        case 'precio_menor':
+            $productosQuery->orderBy('precio', 'asc');
+            break;
+        case 'precio_mayor':
+            $productosQuery->orderBy('precio', 'desc');
+            break;
+        case 'nombre_asc':
+            $productosQuery->orderBy('nombre', 'asc');
+            break;
+        case 'nombre_desc':
+            $productosQuery->orderBy('nombre', 'desc');
+            break;
+        default:
+            $productosQuery->latest('created_at');
+            break;
+    }
+
+    $productos = $productosQuery->get();
     $categorias = ['Todas', 'Palas', 'Calzado', 'Accesorios', 'Ropa', 'Otros'];
 
-    return view('catalogo', compact('productos', 'categorias', 'categoriaSeleccionada'));
+    return view('catalogo', compact(
+        'productos',
+        'categorias',
+        'categoriaSeleccionada',
+        'terminoBusqueda',
+        'ordenSeleccionado'
+    ));
 })->name('catalogo');
 
 // Detalle público de producto
