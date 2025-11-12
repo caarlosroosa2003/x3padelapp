@@ -4,16 +4,16 @@
 
 @section('content')
 <!-- Hero Section -->
-<div class="bg-gradient-to-r from-black to-gray-900 text-white py-20">
+<div class="bg-gradient-to-r from-black to-gray-900 text-black py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between flex-wrap gap-4">
             <div>
-                <h1 class="text-5xl font-bold mb-4">Mis Reservas</h1>
+                <h1 class="text-5xl font-bold mb-4 text-white">Mis Reservas</h1>
                 <p class="text-xl text-gray-300">Gestiona y consulta tu historial de reservas</p>
             </div>
             <div class="flex gap-4">
                 <div class="bg-[#C3E617] bg-opacity-20 rounded-xl p-4 text-center">
-                    <div class="text-[#050000] text-3xl font-bold">{{ $user->reservas_count }}</div>
+                    <div class="text-[#020000] text-3xl font-bold">{{ $user->reservas_count }}</div>
                     <div class="text-[#424242] text-sm">Total Reservas</div>
                 </div>
                 <div class="bg-green-500 bg-opacity-20 rounded-xl p-4 text-center">
