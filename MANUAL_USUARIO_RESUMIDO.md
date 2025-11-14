@@ -66,11 +66,120 @@
 ## 📝 DESARROLLO DE CONTENIDO POR SECCIÓN
 
 ### 1. INTRODUCCIÓN
-**Contenido:**
-- Bienvenida a X3 Pádel
-- Descripción breve del sistema
-- Requisitos técnicos (navegador, conexión)
-- Cómo navegar el manual
+
+#### 1.1. Presentación del Sistema
+
+**Bienvenido a X3 Pádel**
+
+Le damos la bienvenida al sistema de gestión de reservas de X3 Pádel. Esta plataforma web ha sido diseñada para facilitar la reserva de pistas de pádel de manera rápida, sencilla y eficiente, permitiéndole gestionar sus reservas desde cualquier dispositivo con conexión a internet.
+
+**¿Qué es X3 Pádel?**
+
+X3 Pádel es una aplicación web que permite a los usuarios:
+
+- **Reservar pistas de pádel** de forma online, eligiendo la fecha, hora y pista que mejor se adapte a sus necesidades
+- **Gestionar sus reservas** de manera centralizada, viendo sus próximas reservas y el historial completo
+- **Participar en el programa de recompensas**, obteniendo una reserva gratis por cada 5 reservas realizadas
+- **Explorar el catálogo de productos** relacionados con el pádel (palas, calzado, accesorios)
+- **Mantener su perfil actualizado** con su información personal y estadísticas de uso
+
+El sistema está diseñado para ser intuitivo y fácil de usar, permitiéndole realizar reservas en pocos minutos desde la comodidad de su hogar o desde cualquier lugar.
+
+**Características principales:**
+
+- ✅ Reservas online disponibles 24/7
+- ✅ Calendario interactivo para visualizar disponibilidad
+- ✅ Sistema de recompensas automático (5 reservas = 1 gratis)
+- ✅ Gestión completa de perfil de usuario
+- ✅ Historial detallado de todas sus reservas
+- ✅ Catálogo de productos de pádel
+- ✅ Interfaz responsive (adaptable a móviles, tablets y ordenadores)
+
+---
+
+#### 1.2. Requisitos y Acceso
+
+**Requisitos técnicos:**
+
+Para utilizar el sistema X3 Pádel, necesitará:
+
+1. **Navegador web actualizado:**
+   - Google Chrome (versión 90 o superior)
+   - Mozilla Firefox (versión 88 o superior)
+   - Microsoft Edge (versión 90 o superior)
+   - Safari (versión 14 o superior)
+   - Opera (versión 76 o superior)
+
+2. **Conexión a internet:**
+   - Conexión estable a internet (ADSL, fibra óptica, 4G/5G)
+   - Se recomienda una velocidad mínima de 1 Mbps para una experiencia óptima
+
+3. **Dispositivo compatible:**
+   - Ordenador (Windows, macOS, Linux)
+   - Tablet (iOS, Android)
+   - Smartphone (iOS, Android)
+
+4. **JavaScript habilitado:**
+   - El sistema requiere JavaScript activado en su navegador para funcionar correctamente
+
+**Acceso al sistema:**
+
+- Para acceder al sistema, simplemente visite la URL proporcionada por X3 Pádel en su navegador web
+- No es necesario instalar ninguna aplicación adicional
+- El sistema funciona completamente desde el navegador web
+
+**Primeros pasos:**
+
+1. Si es la primera vez que utiliza el sistema, deberá **crear una cuenta** (consulte la sección 2.1)
+2. Si ya tiene una cuenta, puede **iniciar sesión** directamente (consulte la sección 2.2)
+3. Una vez autenticado, podrá comenzar a realizar reservas inmediatamente
+
+---
+
+#### 1.3. Navegación Básica
+
+**Estructura del manual:**
+
+Este manual está organizado en 11 secciones principales que le guiarán paso a paso en el uso del sistema:
+
+1. **Introducción** (esta sección) - Información general y requisitos
+2. **Registro e Inicio de Sesión** - Cómo crear una cuenta y acceder al sistema
+3. **Realizar una Reserva** - Proceso completo de reserva de pistas
+4. **Gestión de Reservas** - Ver, cancelar y consultar el historial de reservas
+5. **Programa de Recompensas** - Cómo funciona el sistema de reservas gratis
+6. **Perfil de Usuario** - Editar información personal y cambiar contraseña
+7. **Catálogo de Productos** - Navegar y explorar productos de pádel
+8. **Contacto** - Formulario de contacto e información de soporte
+9. **Panel de Administración** - Funcionalidades exclusivas para administradores
+10. **Preguntas Frecuentes** - Respuestas a las dudas más comunes
+11. **Solución de Problemas** - Guía para resolver problemas técnicos
+
+**Cómo usar este manual:**
+
+- **Búsqueda rápida:** Utilice el índice al inicio del documento para localizar rápidamente la sección que necesita
+- **Lectura secuencial:** Si es nuevo en el sistema, le recomendamos leer las secciones en orden, especialmente las secciones 1 a 4
+- **Referencia rápida:** Si ya conoce el sistema, puede consultar secciones específicas según sus necesidades
+- **Capturas de pantalla:** Cada sección incluye referencias a capturas de pantalla que ilustran los procesos descritos
+
+**Convenciones utilizadas:**
+
+- **Texto en negrita:** Indica acciones importantes o nombres de botones/opciones
+- **Código o rutas:** Las rutas del sistema aparecen entre comillas o en formato de código
+- **⚠️ Advertencias:** Información importante que debe tener en cuenta
+- **💡 Tips:** Consejos útiles para optimizar su experiencia
+
+**Información importante a recordar:**
+
+- **Antelación mínima:** Las reservas deben realizarse con al menos **1 día de antelación**
+- **Horarios:** 
+  - Mañana: 8:00 - 14:00
+  - Cerrado: 14:00 - 17:00
+  - Tarde: 17:00 - 23:30
+- **Duración:** Cada sesión tiene una duración de **1 hora y 30 minutos**
+- **Precio:** 30€ por sesión (o gratis si utiliza una reserva de recompensa)
+- **Recompensas:** Por cada 5 reservas realizadas, obtendrá automáticamente 1 reserva gratis
+
+---
 
 **Capturas necesarias:**
 - Página de inicio
