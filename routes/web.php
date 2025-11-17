@@ -97,6 +97,7 @@ Route::middleware('auth')->group(function () {
     // Acciones de reservas
     Route::post('/reservas/crear', [ReservaController::class, 'crear'])->name('reservas.crear');
     Route::delete('/reservas/{reserva}/cancelar', [ReservaController::class, 'cancelar'])->name('reservas.cancelar');
+    Route::post('/reservas/{reserva}/check-in', [ReservaController::class, 'checkIn'])->name('reservas.check-in');
 });
 
 // Panel de administración (protegido con middleware admin)
@@ -113,6 +114,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // Reservas (panel admin)
     Route::get('/reservas', [App\Http\Controllers\AdminController::class, 'reservations'])->name('reservas.index');
+    
+    // Procesar reservas completadas (para administradores o comando programado)
+    Route::post('/reservas/procesar-completadas', [ReservaController::class, 'procesarReservasCompletadas'])->name('reservas.procesar-completadas');
 });
 
 require __DIR__.'/auth.php';

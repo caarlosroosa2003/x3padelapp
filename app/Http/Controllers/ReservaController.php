@@ -134,6 +134,16 @@ class ReservaController extends Controller
         $pista = Pista::findOrFail($request->pista_id);
         $user = auth()->user();
 
+        // Verificar que el usuario puede hacer reservas (no bloqueado)
+        if (!$user->puedeReservar()) {
+            if ($user->bloqueado) {
+                return back()->with('error', 'Tu cuenta está bloqueada. Contacta con el administrador.');
+            }
+            if ($user->no_shows_count >= 3) {
+                return back()->with('error', 'Has acumulado 3 o más no-shows. Tu cuenta ha sido bloqueada temporalmente. Contacta con el administrador.');
+            }
+        }
+
         // Verificar disponibilidad
         if (!$pista->estaDisponible($request->fecha, $request->hora_inicio, $request->hora_fin)) {
             return back()->with('error', 'Este horario ya no está disponible.');
@@ -161,15 +171,11 @@ class ReservaController extends Controller
             'estado' => 'confirmada',
         ]);
 
-        // Incrementar contador de reservas
+        // Incrementar contador de reservas (solo para estadísticas, no para recompensas)
         $user->increment('reservas_count');
 
-        // Cada 5 reservas, dar una gratis
-        if ($user->reservas_count % 5 == 0 && !$esGratis) {
-            $user->increment('reservas_gratis_disponibles');
-            return redirect()->route('mis-reservas')
-                ->with('success', '¡Reserva confirmada! 🎉 Has ganado una reserva gratis por hacer 5 reservas.');
-        }
+        // NOTA: Las recompensas NO se otorgan aquí. Se otorgan solo cuando las reservas se completan (pasan)
+        // Ver método procesarReservasCompletadas() para más detalles
 
         return redirect()->route('mis-reservas')
             ->with('success', '¡Reserva confirmada exitosamente!');
@@ -218,9 +224,10 @@ class ReservaController extends Controller
     public function cancelar($id)
     {
         $reserva = Reserva::findOrFail($id);
+        $user = auth()->user();
 
         // Verificar que la reserva pertenezca al usuario autenticado
-        if ($reserva->user_id !== auth()->id()) {
+        if ($reserva->user_id !== $user->id) {
             abort(403, 'No tienes permiso para cancelar esta reserva.');
         }
 
@@ -231,14 +238,83 @@ class ReservaController extends Controller
 
         // Si fue gratis, devolver la reserva gratis
         if ($reserva->es_gratis) {
-            auth()->user()->increment('reservas_gratis_disponibles');
+            $user->increment('reservas_gratis_disponibles');
         }
 
-        // Decrementar contador de reservas
-        auth()->user()->decrement('reservas_count');
+        // Decrementar contador de reservas (solo para estadísticas)
+        $user->decrement('reservas_count');
 
+        // Marcar como cancelada
         $reserva->update(['estado' => 'cancelada']);
 
+        // Recalcular reservas completadas y ajustar recompensas
+        // Esto evita que los usuarios abusen del sistema cancelando reservas para obtener recompensas gratis
+        $user->recalcularReservasCompletadas();
+
         return back()->with('success', 'Reserva cancelada exitosamente.');
+    }
+
+    /**
+     * Realizar check-in de una reserva
+     */
+    public function checkIn($id)
+    {
+        $reserva = Reserva::findOrFail($id);
+        $user = auth()->user();
+
+        // Verificar que la reserva pertenezca al usuario autenticado
+        if ($reserva->user_id !== $user->id) {
+            abort(403, 'No tienes permiso para realizar check-in en esta reserva.');
+        }
+
+        // Solo se puede hacer check-in en reservas futuras o el mismo día antes del inicio
+        $fechaHoraInicio = Carbon::parse($reserva->fecha->format('Y-m-d') . ' ' . $reserva->hora_inicio);
+        
+        if ($fechaHoraInicio->isPast()) {
+            return back()->with('error', 'No puedes hacer check-in en una reserva que ya pasó.');
+        }
+
+        // Hacer check-in
+        $reserva->marcarCheckIn();
+
+        return back()->with('success', 'Check-in realizado exitosamente.');
+    }
+
+    /**
+     * Procesar reservas completadas y otorgar recompensas
+     * Este método debe ejecutarse periódicamente (por ejemplo, mediante un comando programado)
+     * o cuando una reserva pasa su fecha/hora de fin
+     */
+    public function procesarReservasCompletadas()
+    {
+        // Obtener todas las reservas que ya pasaron y están confirmadas (no canceladas)
+        $reservasCompletadas = Reserva::where('estado', 'confirmada')
+            ->whereRaw('CONCAT(fecha, " ", hora_fin) < ?', [now()])
+            ->with('user')
+            ->get();
+
+        foreach ($reservasCompletadas as $reserva) {
+            $user = $reserva->user;
+
+            // Marcar como completada si no se hizo check-in (será marcado como no-show)
+            if (!$reserva->check_in_realizado) {
+                $reserva->marcarNoShow();
+            }
+
+            // Actualizar estado a completada
+            $reserva->update(['estado' => 'completada']);
+
+            // Recalcular reservas completadas y otorgar recompensas
+            $reservasCompletadasAnterior = $user->reservas_completadas;
+            $user->recalcularReservasCompletadas();
+
+            // Si llegó a un múltiplo de 5, otorgar recompensa
+            if ($user->reservas_completadas % 5 == 0 && $user->reservas_completadas > 0 && $user->reservas_completadas > $reservasCompletadasAnterior) {
+                // La recompensa ya se otorgó en recalcularReservasCompletadas()
+                // Pero podemos notificar al usuario aquí si es necesario
+            }
+        }
+
+        return response()->json(['message' => 'Reservas procesadas exitosamente']);
     }
 }

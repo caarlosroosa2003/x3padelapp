@@ -6,9 +6,6 @@
 ## 📋 ÍNDICE DEL MANUAL
 
 ### 1. INTRODUCCIÓN
-- 1.1. Presentación del Sistema
-- 1.2. Requisitos y Acceso
-- 1.3. Navegación Básica
 
 ### 2. REGISTRO E INICIO DE SESIÓN
 - 2.1. Crear una Cuenta
@@ -67,117 +64,7 @@
 
 ### 1. INTRODUCCIÓN
 
-#### 1.1. Presentación del Sistema
-
-**Bienvenido a X3 Pádel**
-
-Le damos la bienvenida al sistema de gestión de reservas de X3 Pádel. Esta plataforma web ha sido diseñada para facilitar la reserva de pistas de pádel de manera rápida, sencilla y eficiente, permitiéndole gestionar sus reservas desde cualquier dispositivo con conexión a internet.
-
-**¿Qué es X3 Pádel?**
-
-X3 Pádel es una aplicación web que permite a los usuarios:
-
-- **Reservar pistas de pádel** de forma online, eligiendo la fecha, hora y pista que mejor se adapte a sus necesidades
-- **Gestionar sus reservas** de manera centralizada, viendo sus próximas reservas y el historial completo
-- **Participar en el programa de recompensas**, obteniendo una reserva gratis por cada 5 reservas realizadas
-- **Explorar el catálogo de productos** relacionados con el pádel (palas, calzado, accesorios)
-- **Mantener su perfil actualizado** con su información personal y estadísticas de uso
-
-El sistema está diseñado para ser intuitivo y fácil de usar, permitiéndole realizar reservas en pocos minutos desde la comodidad de su hogar o desde cualquier lugar.
-
-**Características principales:**
-
-- ✅ Reservas online disponibles 24/7
-- ✅ Calendario interactivo para visualizar disponibilidad
-- ✅ Sistema de recompensas automático (5 reservas = 1 gratis)
-- ✅ Gestión completa de perfil de usuario
-- ✅ Historial detallado de todas sus reservas
-- ✅ Catálogo de productos de pádel
-- ✅ Interfaz responsive (adaptable a móviles, tablets y ordenadores)
-
----
-
-#### 1.2. Requisitos y Acceso
-
-**Requisitos técnicos:**
-
-Para utilizar el sistema X3 Pádel, necesitará:
-
-1. **Navegador web actualizado:**
-   - Google Chrome (versión 90 o superior)
-   - Mozilla Firefox (versión 88 o superior)
-   - Microsoft Edge (versión 90 o superior)
-   - Safari (versión 14 o superior)
-   - Opera (versión 76 o superior)
-
-2. **Conexión a internet:**
-   - Conexión estable a internet (ADSL, fibra óptica, 4G/5G)
-   - Se recomienda una velocidad mínima de 1 Mbps para una experiencia óptima
-
-3. **Dispositivo compatible:**
-   - Ordenador (Windows, macOS, Linux)
-   - Tablet (iOS, Android)
-   - Smartphone (iOS, Android)
-
-4. **JavaScript habilitado:**
-   - El sistema requiere JavaScript activado en su navegador para funcionar correctamente
-
-**Acceso al sistema:**
-
-- Para acceder al sistema, simplemente visite la URL proporcionada por X3 Pádel en su navegador web
-- No es necesario instalar ninguna aplicación adicional
-- El sistema funciona completamente desde el navegador web
-
-**Primeros pasos:**
-
-1. Si es la primera vez que utiliza el sistema, deberá **crear una cuenta** (consulte la sección 2.1)
-2. Si ya tiene una cuenta, puede **iniciar sesión** directamente (consulte la sección 2.2)
-3. Una vez autenticado, podrá comenzar a realizar reservas inmediatamente
-
----
-
-#### 1.3. Navegación Básica
-
-**Estructura del manual:**
-
-Este manual está organizado en 11 secciones principales que le guiarán paso a paso en el uso del sistema:
-
-1. **Introducción** (esta sección) - Información general y requisitos
-2. **Registro e Inicio de Sesión** - Cómo crear una cuenta y acceder al sistema
-3. **Realizar una Reserva** - Proceso completo de reserva de pistas
-4. **Gestión de Reservas** - Ver, cancelar y consultar el historial de reservas
-5. **Programa de Recompensas** - Cómo funciona el sistema de reservas gratis
-6. **Perfil de Usuario** - Editar información personal y cambiar contraseña
-7. **Catálogo de Productos** - Navegar y explorar productos de pádel
-8. **Contacto** - Formulario de contacto e información de soporte
-9. **Panel de Administración** - Funcionalidades exclusivas para administradores
-10. **Preguntas Frecuentes** - Respuestas a las dudas más comunes
-11. **Solución de Problemas** - Guía para resolver problemas técnicos
-
-**Cómo usar este manual:**
-
-- **Búsqueda rápida:** Utilice el índice al inicio del documento para localizar rápidamente la sección que necesita
-- **Lectura secuencial:** Si es nuevo en el sistema, le recomendamos leer las secciones en orden, especialmente las secciones 1 a 4
-- **Referencia rápida:** Si ya conoce el sistema, puede consultar secciones específicas según sus necesidades
-- **Capturas de pantalla:** Cada sección incluye referencias a capturas de pantalla que ilustran los procesos descritos
-
-**Convenciones utilizadas:**
-
-- **Texto en negrita:** Indica acciones importantes o nombres de botones/opciones
-- **Código o rutas:** Las rutas del sistema aparecen entre comillas o en formato de código
-- **⚠️ Advertencias:** Información importante que debe tener en cuenta
-- **💡 Tips:** Consejos útiles para optimizar su experiencia
-
-**Información importante a recordar:**
-
-- **Antelación mínima:** Las reservas deben realizarse con al menos **1 día de antelación**
-- **Horarios:** 
-  - Mañana: 8:00 - 14:00
-  - Cerrado: 14:00 - 17:00
-  - Tarde: 17:00 - 23:30
-- **Duración:** Cada sesión tiene una duración de **1 hora y 30 minutos**
-- **Precio:** 30€ por sesión (o gratis si utiliza una reserva de recompensa)
-- **Recompensas:** Por cada 5 reservas realizadas, obtendrá automáticamente 1 reserva gratis
+**Bienvenido a X3 Pádel**, una plataforma web que permite reservar pistas de pádel de forma online las 24 horas del día. El sistema funciona desde cualquier navegador web actualizado (Chrome, Firefox, Edge, Safari, Opera) con conexión a internet y JavaScript habilitado, sin necesidad de instalar aplicaciones adicionales. Para comenzar, debe crear una cuenta o iniciar sesión si ya posee una. El sistema permite reservar pistas eligiendo fecha y horario (mañana 8:00-14:00 o tarde 17:00-23:30), gestionar sus reservas, participar en el programa de recompensas (cada 5 reservas = 1 gratis), explorar el catálogo de productos de pádel y mantener su perfil actualizado. **Información clave:** las reservas requieren mínimo 1 día de antelación, cada sesión dura 1 hora y 30 minutos, el precio es de 30€ por sesión (o gratis con reserva de recompensa), y el sistema es completamente responsive para móviles, tablets y ordenadores.
 
 ---
 
@@ -188,21 +75,104 @@ Este manual está organizado en 11 secciones principales que le guiarán paso a 
 ---
 
 ### 2. REGISTRO E INICIO DE SESIÓN
-**Contenido:**
-- **Registro:**
-  - Acceso al formulario
-  - Campos requeridos (nombre, email, teléfono, contraseña)
-  - Validaciones básicas
-  - Confirmación de registro exitoso
-- **Inicio de Sesión:**
-  - Formulario de login
-  - Recuperación de contraseña
-- **Navegación después del login**
+
+#### 2.1. Crear una Cuenta
+
+**Acceso al formulario:**
+- Haga clic en el botón **"Registrarse"** desde la página de inicio o enlace **"¿No tienes cuenta?"** desde la página de login
+
+**Campos requeridos:**
+- **Nombre** (obligatorio): Nombre completo, máximo 255 caracteres
+- **Email** (obligatorio): Dirección de correo válida y única. **Importante:** No se puede cambiar después del registro
+- **Teléfono** (opcional): Número de teléfono, puede incluir código de país (ejemplo: +34 123 456 789)
+- **Contraseña** (obligatorio): Mínimo 8 caracteres, recomendado incluir mayúsculas, minúsculas, números y símbolos
+- **Confirmar Contraseña** (obligatorio): Debe coincidir exactamente con la contraseña
+
+**Validaciones:**
+- El sistema valida automáticamente que todos los campos obligatorios estén completos, el email sea válido y no esté duplicado, y que las contraseñas coincidan
+- Si hay errores, aparecerán mensajes debajo de cada campo
+
+**Proceso:**
+1. Complete el formulario
+2. Haga clic en **"Registrarse"**
+3. Si es exitoso, será iniciado sesión automáticamente y redirigido a la página principal
+
+**Beneficios de registrarse:** Reservas online 24/7, programa de recompensas (5 reservas = 1 gratis), historial de reservas y perfil personalizado
+
+---
+
+#### 2.2. Iniciar Sesión
+
+**Acceso al formulario:**
+- Haga clic en el botón **"Iniciar Sesión"** o enlace **"¿Ya estás registrado?"** desde la página de registro
+
+**Campos:**
+- **Email** (obligatorio): Email utilizado al registrarse
+- **Contraseña** (obligatorio): Contraseña de su cuenta
+- **Recuérdame** (opcional): Mantiene la sesión activa después de cerrar el navegador (solo en dispositivos personales y seguros)
+
+**Seguridad:**
+- Límite de 5 intentos de inicio de sesión para prevenir ataques
+- Si excede el límite, debe esperar antes de intentar nuevamente
+
+**Proceso:**
+1. Ingrese email y contraseña
+2. (Opcional) Marque "Recuérdame"
+3. Haga clic en **"Iniciar Sesión"**
+4. Si las credenciales son correctas, será redirigido a la página principal
+
+**Mensajes de error:**
+- "Estas credenciales no coinciden con nuestros registros" - Email y/o contraseña incorrectos
+- "Demasiados intentos de inicio de sesión" - Debe esperar antes de intentar de nuevo
+
+---
+
+#### 2.3. Recuperar Contraseña
+
+**Proceso de recuperación:**
+
+1. **Solicitar enlace:**
+   - Desde la página de login, haga clic en **"¿Olvidaste tu contraseña?"**
+   - Ingrese su email
+   - Haga clic en **"Enviar enlace de recuperación"**
+   - Revise su email (incluida la carpeta de spam)
+
+2. **Restablecer contraseña:**
+   - Abra el email recibido y haga clic en el enlace de recuperación
+   - Ingrese su nueva contraseña dos veces para confirmar
+   - Haga clic en **"Restablecer Contraseña"**
+
+**Notas importantes:**
+- Los enlaces de recuperación son únicos y temporales (expiran después de un tiempo)
+- Si no recibe el email, revise spam o solicite un nuevo enlace
+- Si el enlace expiró, solicite uno nuevo
+
+---
+
+#### 2.4. Navegación Después del Login
+
+**Menú principal disponible:**
+- **Inicio** - Página principal
+- **Reservas** - Sistema de reservas
+- **Mis Reservas** - Gestión de reservas
+- **Perfil** - Información personal
+- **Catálogo** - Productos de pádel
+- **Contacto** - Soporte
+
+**Información visible:** En la esquina superior derecha verá su nombre/email, menú de perfil y opción para cerrar sesión
+
+**Cerrar sesión:** Haga clic en su nombre/email → **"Cerrar Sesión"**
+
+**Notas:** Si marcó "Recuérdame", permanecerá conectado. Para mayor seguridad, cierre sesión en computadoras compartidas
+
+---
 
 **Capturas necesarias:**
 - Formulario de registro
-- Formulario de login
+- Formulario de inicio de sesión
 - Página de recuperación de contraseña
+- Página de restablecimiento de contraseña
+- Página principal después del login (menú de usuario)
 
 ---
 
