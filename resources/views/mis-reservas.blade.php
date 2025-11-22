@@ -122,7 +122,15 @@
                         </span>
                         
                         @if(!$reserva->haPasado())
-                        <form action="{{ route('reservas.cancelar', $reserva->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas cancelar esta reserva?')">
+                        <form 
+                            action="{{ route('reservas.cancelar', $reserva->id) }}" 
+                            method="POST"
+                            data-cancel-form="true"
+                            data-pista="{{ $reserva->pista->nombre }}"
+                            data-fecha="{{ $reserva->fecha->format('d/m/Y') }}"
+                            data-hora="{{ date('H:i', strtotime($reserva->hora_inicio)) }} - {{ date('H:i', strtotime($reserva->hora_fin)) }}"
+                            data-precio="{{ $reserva->es_gratis ? 'GRATIS' : number_format($reserva->precio, 2) . '€' }}"
+                        >
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="w-full px-4 py-2 bg-red-500 text-white rounded-lg text-sm font-semibold hover:bg-red-600 transition duration-300">
@@ -234,4 +242,124 @@
         </div>
     </div>
 </section>
+
+<!-- Modal Cancelación -->
+<div id="cancel-modal" class="w-full h-full hidden fixed inset-0 z-40 bg-black bg-opacity-30 backdrop-blur-sm items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-xl p-6 sm:p-8 relative mx-auto">
+        <div class="flex items-start justify-between mb-6">
+            <div>
+                <p class="text-sm uppercase tracking-wide text-gray-500 font-semibold">Confirmar acción</p>
+                <h3 class="text-2xl font-bold text-gray-900 mt-1">¿Cancelar esta reserva?</h3>
+            </div>
+            <button type="button" class="text-gray-400 hover:text-gray-600" data-modal-close>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <p class="text-gray-600 mb-6">Al cancelar se liberará el horario reservado y, si era una reserva gratis, volverá a tu saldo disponible.</p>
+        <div class="space-y-4 bg-gray-50 rounded-xl p-4 mb-8">
+            <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-500 font-medium">Pista</span>
+                <span class="text-gray-900 font-semibold" id="modal-pista"></span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-500 font-medium">Fecha</span>
+                <span class="text-gray-900 font-semibold" id="modal-fecha"></span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-500 font-medium">Horario</span>
+                <span class="text-gray-900 font-semibold" id="modal-hora"></span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-500 font-medium">Tarifa</span>
+                <span class="text-gray-900 font-semibold" id="modal-precio"></span>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+            <button 
+                type="button" 
+                class="flex-1 px-5 py-3 border border-gray-200 rounded-xl text-gray-700 font-semibold hover:bg-gray-100 transition"
+                data-modal-close
+            >
+                Volver
+            </button>
+            <button 
+                type="button" 
+                class="flex-1 px-5 py-3 bg-red-600 text-white rounded-xl font-semibold hover:bg-red-700 transition shadow-lg shadow-red-200"
+                id="modal-cancel-confirm"
+            >
+                Sí, cancelar
+            </button>
+        </div>
+    </div>
+</div>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('cancel-modal');
+        const btnCloseElements = modal.querySelectorAll('[data-modal-close]');
+        const confirmButton = document.getElementById('modal-cancel-confirm');
+        const detailFields = {
+            pista: document.getElementById('modal-pista'),
+            fecha: document.getElementById('modal-fecha'),
+            hora: document.getElementById('modal-hora'),
+            precio: document.getElementById('modal-precio'),
+        };
+
+        let currentForm = null;
+
+        const openModal = (form) => {
+            detailFields.pista.textContent = form.dataset.pista || '';
+            detailFields.fecha.textContent = form.dataset.fecha || '';
+            detailFields.hora.textContent = form.dataset.hora || '';
+            detailFields.precio.textContent = form.dataset.precio || '';
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+            modal.focus();
+        };
+
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+            currentForm = null;
+        };
+
+        document.querySelectorAll('form[data-cancel-form="true"]').forEach((form) => {
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                currentForm = form;
+                openModal(form);
+            });
+        });
+
+        confirmButton.addEventListener('click', () => {
+            if (currentForm) {
+                currentForm.submit();
+                closeModal();
+            }
+        });
+
+        btnCloseElements.forEach((btn) => {
+            btn.addEventListener('click', closeModal);
+        });
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    });
+</script>
+@endpush

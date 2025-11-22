@@ -92,6 +92,22 @@ class AdminController extends Controller
     }
 
     /**
+     * Añadir reservas gratis a un usuario
+     */
+    public function addFreeReservations(Request $request, User $user)
+    {
+        $request->validate([
+            'cantidad' => 'required|integer|min:1|max:50',
+        ]);
+
+        $user->increment('reservas_gratis_disponibles', (int) $request->cantidad);
+
+        return redirect()
+            ->route('admin.users')
+            ->with('success', "Se añadieron {$request->cantidad} reservas gratis a {$user->name}.");
+    }
+
+    /**
      * Buscar usuarios
      */
     public function searchUsers(Request $request)
