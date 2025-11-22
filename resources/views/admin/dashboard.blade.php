@@ -42,7 +42,7 @@
 
     <div class="bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="bg-gradient-to-r from-gray-800 to-black px-6 py-4">
-            <h2 class="text-xl font-bold text-black">Usuarios Recientes</h2>
+            <h2 class="text-xl font-bold text-white">Usuarios Recientes</h2>
         </div>
         <div class="p-6 overflow-x-auto">
             <table class="min-w-full w-full divide-y divide-gray-200">
