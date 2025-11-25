@@ -121,7 +121,7 @@
                         <label for="telefono" class="block text-sm font-semibold text-gray-700 mb-2">Teléfono</label>
                         <input type="tel" id="telefono" name="telefono"
                             class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C3E617] focus:outline-none transition duration-300"
-                            placeholder="+34 123 456 789">
+                            placeholder="123 456 789">
                     </div>
                     
                     <div>
@@ -153,21 +153,6 @@
     </div>
 </section>
 
-<!-- Mapa (placeholder) -->
-<section class="py-12 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Cómo Llegar</h2>
-        <div class="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
-            <div class="text-center">
-                <svg class="w-24 h-24 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-                <p class="text-gray-800 text-lg">Mapa de ubicación (Google Maps se integrará aquí)</p>
-            </div>
-        </div>
-    </div>
-</section>
 @endsection
 
 

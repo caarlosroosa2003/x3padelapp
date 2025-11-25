@@ -63,7 +63,8 @@
                 </div>
                 <div>
                     <x-input-label for="imagen" :value="__('Nueva imagen (opcional)')" />
-                    <input id="imagen" name="imagen" type="file" accept="image/*" class="mt-1 block w-full text-sm text-gray-700">
+                    <input id="imagen" name="imagen" type="file" accept="image/jpeg,image/jpg,image/png,image/gif,image/webp,image/bmp,image/svg+xml" class="mt-1 block w-full text-sm text-gray-700">
+                    <p class="mt-1 text-xs text-gray-500">Formatos aceptados: JPG, JPEG, PNG, GIF, WEBP, BMP, SVG (máx. 10MB)</p>
                     <x-input-error class="mt-2" :messages="$errors->get('imagen')" />
                 </div>
             </div>

@@ -37,9 +37,12 @@ class ProductController extends Controller
             'descripcion' => 'nullable|string',
             'precio' => 'required|numeric|min:0',
             'categoria' => 'required|string|max:255',
-            'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'imagen' => 'nullable|file|mimes:jpeg,jpg,png,gif,webp,bmp,svg|max:10240',
             'stock' => 'nullable|integer|min:0',
             'activo' => 'boolean',
+        ], [
+            'imagen.mimes' => 'La imagen debe ser de tipo: jpeg, jpg, png, gif, webp, bmp o svg.',
+            'imagen.max' => 'La imagen no puede ser mayor a 10MB.',
         ]);
 
         // Manejar la imagen si se sube
@@ -83,9 +86,12 @@ class ProductController extends Controller
             'descripcion' => 'nullable|string',
             'precio' => 'required|numeric|min:0',
             'categoria' => 'required|string|max:255',
-            'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'imagen' => 'nullable|file|mimes:jpeg,jpg,png,gif,webp,bmp,svg|max:10240',
             'stock' => 'nullable|integer|min:0',
             'activo' => 'boolean',
+        ], [
+            'imagen.mimes' => 'La imagen debe ser de tipo: jpeg, jpg, png, gif, webp, bmp o svg.',
+            'imagen.max' => 'La imagen no puede ser mayor a 10MB.',
         ]);
 
         // Manejar la imagen si se sube una nueva
