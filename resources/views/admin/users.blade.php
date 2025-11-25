@@ -238,20 +238,7 @@
             </div>
         </form>
 
-        <div class="mt-8 pt-6 border-t border-gray-100">
-            <h4 class="text-lg font-semibold text-gray-900 mb-4">Añadir reservas gratis</h4>
-            <form id="addFreeForm" method="POST" class="space-y-4">
-                @csrf
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Cantidad a añadir</label>
-                    <input type="number" name="cantidad" id="add_free_amount" min="1" max="50" value="1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C3E617] focus:border-transparent">
-                </div>
-                <p class="text-sm text-gray-500">Se sumará al saldo actual sin reemplazarlo. Máximo 50 por operación.</p>
-                <button type="submit" class="w-full bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300">
-                    Añadir al saldo
-                </button>
-            </form>
-        </div>
+        
     </div>
 </div>
 
@@ -272,9 +259,7 @@ function editUser(userId) {
     const form = document.getElementById('editUserForm');
     form.action = `/admin/users/${userId}`;
 
-    const addFreeForm = document.getElementById('addFreeForm');
-    addFreeForm.action = `/admin/users/${userId}/reservas-gratis`;
-    document.getElementById('add_free_amount').value = 1;
+
     
     const modal = document.getElementById('editUserModal');
     modal.classList.remove('hidden');
