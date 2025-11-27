@@ -29,7 +29,7 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Dirección</h3>
-                            <p class="text-gray-800">Calle Principal, 123<br>Ciudad, Provincia, 12345</p>
+                            <p class="text-gray-800">Calle Proyecto, 123<br>Vca De Los Barros, Badajoz, 06220</p>
                         </div>
                     </div>
                     
@@ -41,8 +41,8 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Teléfono</h3>
-                            <p class="text-gray-800">+34 123 456 789</p>
-                            <p class="text-gray-800 text-sm mt-1">Lun - Dom: 8:00 - 23:00</p>
+                            <p class="text-gray-800">634 321 831</p>
+                            <p class="text-gray-800 text-sm mt-1">Lun - Dom: 8:00 - 23:30</p>
                         </div>
                     </div>
                     
@@ -54,8 +54,7 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                            <p class="text-gray-800">info@x3padel.com</p>
-                            <p class="text-gray-800">reservas@x3padel.com</p>
+                            <p class="text-gray-800">x3padelofficial@gmail.com</p>
                         </div>
                     </div>
                     
@@ -68,7 +67,7 @@
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Horario</h3>
                             <p class="text-gray-800">Lunes a Domingo</p>
-                            <p class="text-gray-800">8:00 - 23:00</p>
+                            <p class="text-gray-800">8:00 - 23:30</p>
                         </div>
                     </div>
                 </div>
@@ -144,8 +143,9 @@
                     </div>
                     
                     <button type="submit"
-                        class="w-full bg-[#C3E617] text-black py-4 rounded-lg font-bold text-lg hover:bg-[#d4f73a] transition duration-300 transform hover:scale-105 shadow-lg">
-                        Enviar Mensaje
+                    disabled="true"
+                        class="w-full bg-[#C3E617] text-black py-4 rounded-lg font-bold text-lg hover:bg-[#d4f73a] transition duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                        Proximamente
                     </button>
                 </form>
             </div>

@@ -13,11 +13,11 @@
             @csrf
             @method('delete')
 
-            <h2 class="text-lg font-medium text-gray-900">
+            <h2 class="text-lg font-medium text-white">
                 ¿Estás seguro de que quieres eliminar tu cuenta?
             </h2>
 
-            <p class="mt-1 text-sm text-gray-800">
+            <p class="mt-1 text-sm text-white">
                 Una vez que tu cuenta sea eliminada, todos sus recursos y datos serán permanentemente borrados. Por favor ingresa tu contraseña para confirmar que deseas eliminar tu cuenta de forma permanente.
             </p>
 
